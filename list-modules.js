@@ -1,17 +1,50 @@
-let mods = '';
+// Foundry Details
+let output = `System:
+  Foundry: ${game.data.version}
+  System: ${game.system.id} version ${game.system.data.version}
+`
+// User details
+output += `User:
+  Role: ${Object.keys(CONST.USER_ROLES)[game.user.role]}
+`;
+
+// Scene Details
+output += `Scene Details:
+  Walls: ${canvas.walls.placeables.length}
+  Lights: ${canvas.lighting.placeables.length}
+  Tokens: ${canvas.tokens.placeables.length}
+  Dimensions: ${canvas.dimensions.width} x ${canvas.dimensions.height}
+  Background: ${canvas.background?.img?.texture?.width} x ${canvas.background?.img?.texture?.height}
+`;
+
+// Module details
+let ct = 0;
 game.modules.forEach(m => {
-  let a = m.active ? 'Enabled' : 'Disabled';
-  mods = mods.concat(`${m.id}: ${a}\n`);
+  if (m.active) ct++;
 });
+
+output += `Modules:
+  Total: ${game.modules.size}
+  Enabled: ${ct};
+`;
+
+// GPU Details
+let gl = canvas.app.renderer.gl;
+output += `GPU:
+  WebGL: ${gl}
+  WebGL Version: ${gl.getParameter(gl.VERSION)} 
+  MAX_TEXTURE_SIZE: ${gl.getParameter(gl.MAX_TEXTURE_SIZE)}
+
+`;
 
 let d = new Dialog({
   title: `Enabled Mods`,
-  content: `<textarea style="height: 500px;" type="text" id="modslist" name="modslist">${mods}</textarea>`,
+  content: `<textarea style="height: 500px" type="text" id="debugmacro">${output}</textarea>`,
   buttons: {
     copy: {
       label: `Copy to clipboard`,
       callback: () => {
-        $("#modslist").select();
+        $("#debugmacro").select();
         document.execCommand('copy');
       }
     },
