@@ -1,7 +1,3 @@
-/*
- * Macro to check common problems
- */
-
 // Foundry Details
 let output = `System:
   Foundry: ${game.data.version}
@@ -18,7 +14,7 @@ output += `Scene Details:
   Lights: ${canvas.lighting.placeables.length}
   Tokens: ${canvas.tokens.placeables.length}
   Dimensions: ${canvas.dimensions.width} x ${canvas.dimensions.height}
-  Background: ${canvas.background?.img.texture.width} x ${canvas.background?.img.texture.height}
+  Background: ${canvas.background?.img?.texture?.width} x ${canvas.background?.img?.texture?.height}
 `;
 
 // Module details
@@ -41,7 +37,6 @@ output += `GPU:
 
 `;
 
-// Render dialog
 let d = new Dialog({
   title: `Enabled Mods`,
   content: `<textarea style="height: 500px" type="text" id="debugmacro">${output}</textarea>`,
