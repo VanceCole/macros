@@ -28,17 +28,20 @@ output += `Modules:
   Enabled: ${ct};
 `;
 
-// GPU Details
+// Browser Details
 let gl = canvas.app.renderer.gl;
-output += `GPU:
-  WebGL: ${gl}
+output += `Browser:
+  
+  WebGL: ${gl}`;
+if (gl) {
+output += `
   WebGL Version: ${gl.getParameter(gl.VERSION)} 
   MAX_TEXTURE_SIZE: ${gl.getParameter(gl.MAX_TEXTURE_SIZE)}
-
 `;
+}
 
 let d = new Dialog({
-  title: `Enabled Mods`,
+  title: `Debug Output`,
   content: `<textarea style="height: 500px" type="text" id="debugmacro">${output}</textarea>`,
   buttons: {
     copy: {
