@@ -20,6 +20,14 @@ report.Scene = {
   Background: `${canvas.background?.img?.texture?.width} x ${canvas.background?.img?.texture?.height}`,
 }
 
+report.Database = {
+  Actors: game.actors.size,
+  Items: game.items.size,
+  Scenes: game.scenes.size,
+  Journals: game.journal.size,
+  Tables: game.tables.size,
+}
+
 // Module details
 let ct = 0;
 game.modules.forEach(m => {
