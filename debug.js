@@ -41,9 +41,9 @@ report.Modules = {
 
 // Browser Details
 report.Browser = {
-  platform: navigator.platform,
-  vendor: navigator.vendor,
-  agent: navigator.userAgent,
+  Platform: navigator.platform,
+  Vendor: navigator.vendor,
+  Agent: navigator.userAgent,
 }
 
 // Browser Details
