@@ -1,5 +1,5 @@
 /*
- * Macros to retrieve windows that ocassionaly get lost of screen
+ * Macros to retrieve windows that ocassionaly get lost off screen
  */
 
 // Popped out webcams

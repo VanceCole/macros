@@ -22,3 +22,41 @@ let tokens = canvas.tokens.controlled;
 tokens.forEach(token => {
   console.log(token.name);
 });
+
+// Distance between 2 tokens
+let d = canvas.grid.measureDistance(token1, token2);
+
+// Create a dialog and request a value input
+let d = new Dialog({
+  title: 'Example',
+  content: `
+    <form class="flexcol">
+      <div class="form-group">
+        <label for="exampleInput">Example Input</label>
+        <input type="text" name="exampleInput" placeholder="Enter Value">
+      </div>
+    </form>
+  `,
+  buttons: {
+    no: {
+      icon: '<i class="fas fa-times"></i>',
+      label: 'Cancel'
+    },
+    yes: {
+      icon: '<i class="fas fa-check"></i>',
+      label: 'Yes',
+      callback: (html) => {
+        let val = html.find('input[name="exampleInput"]').val();
+        console.log(`ExampleInput value was: ${val}`);
+      }
+    },
+  },
+  default: 'yes',
+  close: () => {
+    console.log('Example Dialog Closed');
+  }
+});
+
+d.options.width = 300;
+d.position.width = 300;
+d.render(true);
