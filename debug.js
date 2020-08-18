@@ -81,7 +81,7 @@ for (const [k1, v1] of Object.entries(report)) {
 
 let d = new Dialog({
   title: `Debug Output`,
-  content: `<textarea style="height: 500px" type="text" id="debugmacro">${output}</textarea>`,
+  content: `<textarea readonly style="height: 500px" type="text" id="debugmacro">${output}</textarea>`,
   buttons: {
     copy: {
       label: `Copy to clipboard`,
