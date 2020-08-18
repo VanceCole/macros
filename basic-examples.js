@@ -5,7 +5,7 @@ new Roll('1d20').toMessage({flavor: 'Example Flavor'});
 new Roll('1d20').toMessage({rollMode: 'gmroll'});
 
 // Send chat message
-ChatMessage.create({content: 'Screw you, Steve'});
+ChatMessage.create({content: 'Hello World!'});
 
 // Send chat message emote as a given actor
 let act = game.actors.getName('Ancient Red Dragon');
@@ -36,6 +36,16 @@ tokens.forEach(token => {
 
 // Distance between 2 tokens
 let d = canvas.grid.measureDistance(token1, token2);
+
+// Load JSON
+fetch('/modules/myModule/module.json')
+  .then(response => response.json())
+  .then(data => console.log(data));
+
+// Load JSON using await
+let response = await fetch('/modules/myModule/module.json');
+let data = await response.json();
+console.log(data);
 
 // Create a dialog and request a value input
 let d = new Dialog({
