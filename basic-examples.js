@@ -7,7 +7,7 @@ new Roll('1d20').toMessage({rollMode: 'gmroll'});
 // Send chat message
 ChatMessage.create({content: 'Screw you, Steve'});
 
-// Send chat message as a given actor
+// Send chat message emote as a given actor
 let act = game.actors.getName('Ancient Red Dragon');
 let spk = ChatMessage.getSpeaker({ actor: act });
 ChatMessage.create({
