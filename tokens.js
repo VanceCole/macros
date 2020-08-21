@@ -13,7 +13,23 @@ tokens.forEach(token => {
 // Distance between 2 tokens
 let d = canvas.grid.measureDistance(token1, token2);
 
-// Selects one random token from amongst all selected
+// Select one random token from amongst all selected
 let tks = canvas.tokens.controlled;
 let r = Math.floor(Math.random()*tks.length);
 canvas.tokens.selectObjects(tks[r]);
+
+/*
+ * Add token to scene
+ * Options override (actor.data.token) or set properties
+ */
+let options = { x: 0, y: 0 };
+canvas.tokens.dropActor(actor, options);
+
+/*
+ * Add multiple tokens to scene
+ */
+let actor1 = game.actors.getName('Steve');
+let token1 = duplicate(actor1.data.token);
+let actor2 = game.actors.getName('Stella');
+let token2 = duplicate(actor2.data.token);
+canvas.tokens.createMany([ token1, token2 ]);

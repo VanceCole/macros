@@ -10,7 +10,7 @@ let mouse = canvas.app.renderer.plugins.interaction.mouse;
 let local = mouse.getLocalPosition(canvas.app.stage);
 
 let actor = game.actors.getName(myActor);
-let token = duplicate(actor.data.token);
-token.x = Math.round(local.x);
-token.y = Math.round(local.y);
-canvas.tokens.createMany(token);
+canvas.tokens.dropActor(actor, {
+  x: Math.round(local.x),
+  y: Math.round(local.y)
+});
