@@ -10,3 +10,8 @@ let item = game.items.getName("Steve's Item")
 let journal = game.journal.getName("Steve's Journal")
 let scene = game.scene.getName("Steve's House")
 
+// Get all actors which are Player Characters
+let pcs = game.actors.filter(actor => actor.isPC)
+
+// Get all actors which are npcs
+let npcs = game.actors.filter(actor => !actor.isPC)
