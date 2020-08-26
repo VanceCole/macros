@@ -1,4 +1,18 @@
 /*
+ * Very simple dialog to display info
+ */
+let d = new Dialog({
+  title: 'Example',
+  content: `Hello World!`,
+  buttons: {
+    ok: {
+      icon: '<i class="fas fa-check"></i>',
+      label: 'Ok',
+    },
+  }
+}).render(true);
+
+/*
  * Example dialog that requests user input, then uses the value
  */
 let d = new Dialog({
