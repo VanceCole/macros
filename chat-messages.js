@@ -13,3 +13,16 @@ ChatMessage.create({
   type: CHAT_MESSAGE_TYPES.EMOTE
 },
 { chatBubble: true });
+
+// Whisper to player by id
+ChatMessage.create({
+  content: `Hello`,
+  whisper: ["2UAYUrmMnLCEBiJm"]
+});
+
+// Whisper multiple players
+let ids = game.users.filter(u => ["John", "Ella"].includes(u.name)).map(u => u._id);
+ChatMessage.create({
+  content: `Hello`,
+  whisper: ids
+});
