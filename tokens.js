@@ -33,3 +33,16 @@ let token1 = duplicate(actor1.data.token);
 let actor2 = game.actors.getName('Stella');
 let token2 = duplicate(actor2.data.token);
 canvas.tokens.createMany([ token1, token2 ]);
+
+// Select all tokens in scene
+let tokens = canvas.tokens.placeables;
+canvas.tokens.selectObjects(tokens)
+
+// Select token by name
+let token = canvas.tokens.placeables.find(t => t.name === 'Azimuth');
+token.control();
+
+// Select all NPC tokens
+canvas.tokens.selectObjects(); // Drop existing selection
+let tokens = canvas.tokens.placeables.filter(t => !t.actor.isPC); // Find NPCs
+tokens.forEach(t => { t.control({ releaseOthers: false }); }); // Select them
