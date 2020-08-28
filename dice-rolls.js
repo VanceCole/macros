@@ -7,6 +7,8 @@ new Roll('1d20').toMessage();
 // Roll with flavor text
 new Roll('1d20').toMessage({ flavor: 'Example Flavor' });
 
-// Roll with preset roll mode
-new Roll('1d20').toMessage({ rollMode: 'gmroll' });
-
+// Roll with preset roll modes
+new Roll('1d20').toMessage({ rollMode: 'roll' });      // Public Roll
+new Roll('1d20').toMessage({ rollMode: 'gmroll' });    // Private GM Roll
+new Roll('1d20').toMessage({ rollMode: 'blindroll' }); // Blind GM Roll
+new Roll('1d20').toMessage({ rollMode: 'selfroll' });  // Self Roll
