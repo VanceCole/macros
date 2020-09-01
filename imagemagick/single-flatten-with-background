@@ -1,0 +1,1 @@
+magick convert myImage.png -background black -alpha remove -alpha off myNewImage.png

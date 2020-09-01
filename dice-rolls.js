@@ -1,5 +1,5 @@
 // Get result of a roll to use as a variable
-let result = new Roll('1d20').roll();
+let r = new Roll('1d20').roll();
 
 // Roll to chat message
 new Roll('1d20').toMessage();

@@ -1,0 +1,1 @@
+ffmpeg -i myfile.gif -f webm -c:v libvpx -b:v 1M -acodec libvorbis -auto-alt-ref 0 mynewfile.webm

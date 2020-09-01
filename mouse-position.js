@@ -1,3 +1,9 @@
+// Add listener to game board and report mouse click locations
+canvas.app.stage.addListener('pointerdown', event => {
+  let pos = event.data.getLocalPosition(canvas.app.stage);
+  console.log(`x: ${pos.x}, y: ${pos.y}`);
+});
+
 /*
  * Example of getting mouse position when
  * macro is triggered by keyboard event
