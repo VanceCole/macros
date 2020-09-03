@@ -4,7 +4,7 @@
  * Note: you **MUST** set in your module manifest:
  *   "socket": true
  * 
- * Example assumes you have creataed a module called 'mymodule'
+ * Example assumes you have created a module called 'mymodule'
  */
 
  // Create a socket event handler to listen to incomming sockets and dispatch to callbacks
