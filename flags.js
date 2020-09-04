@@ -7,6 +7,13 @@ let x = canvas.scene.getFlag('myModule', 'myFlag');
 // Unset a module flag on a scene
 await canvas.scene.unsetFlag('myModule', 'myFlag');
 
+// React to changes to flag
+Hooks.on('updateScene', (scene, data) => {
+  if (hasProperty(data, 'flags.myModule')) {
+    console.log(data);
+  }
+});
+
 // Flags can be arrays, objects, numbers etc as well
 // Anything that can be stringified
 let data = {

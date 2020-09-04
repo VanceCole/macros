@@ -7,7 +7,7 @@
  * Example assumes you have created a module called 'mymodule'
  */
 
- // Create a socket event handler to listen to incomming sockets and dispatch to callbacks
+// Create a socket event handler to listen to incomming sockets and dispatch to callbacks
 game.socket.on(`module.mymodule`, (data) => {
   if (data.operation === 'myEvent') handleMyEvent(data);
   if (data.operation === 'myOtherEvent') handleMyOtherEvent(data);
