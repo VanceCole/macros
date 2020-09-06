@@ -37,7 +37,7 @@ window.MyFormApplication = MyFormApplication;
  * To open your application
  */
 
-new MyFormApplication().render(true);
+new MyFormApplication('example').render(true);
 
 /**
  * myFormApplication.html
