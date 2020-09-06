@@ -31,7 +31,13 @@ class MyFormApplication extends FormApplication {
   }
 }
 
-window.MyPopup = MyPopup;
+window.MyFormApplication = MyFormApplication;
+
+/**
+ * To open your application
+ */
+
+new MyFormApplication().render(true);
 
 /**
  * myFormApplication.html
