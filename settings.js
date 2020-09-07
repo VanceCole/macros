@@ -1,7 +1,7 @@
-// Get core game settings
+// Set core game settings
 await game.settings.set('core','rollMode','roll');
 
-// Set core game setting
+// Get core game setting
 game.settings.get('core','rollMode');
 
 /*
