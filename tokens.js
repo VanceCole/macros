@@ -46,3 +46,6 @@ token.control();
 canvas.tokens.selectObjects(); // Drop existing selection
 let tokens = canvas.tokens.placeables.filter(t => !t.actor.isPC); // Find NPCs
 tokens.forEach(t => { t.control({ releaseOthers: false }); }); // Select them
+
+// Select token while retaining control of existing selection
+token.control({ releaseOthers: false });

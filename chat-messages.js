@@ -20,9 +20,14 @@ ChatMessage.create({
   whisper: ["2UAYUrmMnLCEBiJm"]
 });
 
-// Whisper multiple players
-let ids = game.users.filter(u => ["John", "Ella"].includes(u.name)).map(u => u._id);
+// Whisper players by name
 ChatMessage.create({
   content: `Hello`,
-  whisper: ids
+  whisper: ChatMessage.getWhisperRecipients('Steve', 'Stella'),
+});
+
+// Whisper GM(s)
+ChatMessage.create({
+  content: `Hello`,
+  whisper: ChatMessage.getWhisperRecipients('GM'),
 });

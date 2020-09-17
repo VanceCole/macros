@@ -1,0 +1,1 @@
+game.macros.getName("myMacro").execute();
