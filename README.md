@@ -5,4 +5,3 @@ If there is something missing that you think would be helpful, please @vance#193
 
 ## To be added:
 - Array methods (.find, .filter, .map, etc)
-- updateEmbeddedEntity()
