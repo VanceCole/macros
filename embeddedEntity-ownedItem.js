@@ -1,6 +1,6 @@
 /**
  * For dealing with entities embedded in another entity, for example
- * myItem. owned by a character you use updateEmbeddedEntity()
+ * item owned by a character you use updateEmbeddedEntity()
  */
 
 // Toggle equip / unequip of actor Steve's Warhammer
@@ -22,7 +22,7 @@ let myActor = game.actors.getName('Steve');
 let myItem = actor.data.items.find(i => i.name === 'Crossbow Bolts');
 myActor.updateOwnedItem({
   _id: myItem._id,
-  'data.quantity': 5
+  'data.quantity': myItem.data.quantity-1
 });
 
 /**
