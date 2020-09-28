@@ -53,7 +53,7 @@ function getMouseStagePos() {
 
 
 /**
- * For each tile in scene, check if is roof and if so, set alpha & vis
+ * Return all tiles that exist at given point
  */
 function getTilesAtPos(point) {
   return canvas.tiles.placeables.filter((tile) => {
