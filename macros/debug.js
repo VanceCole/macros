@@ -16,6 +16,10 @@ report.Scene = {
   Walls: canvas.walls.placeables.length,
   Lights: canvas.lighting.placeables.length,
   Tokens: canvas.tokens.placeables.length,
+  Tiles: canvas.tiles.placeables.length,
+  Sounds: canvas.sounds.placeables.length,
+  Drawings: canvas.drawings.placeables.length,
+  Notes: canvas.notes.placeables.length,
   Dimensions: `${canvas.dimensions.width} x ${canvas.dimensions.height}`,
   Background: `${canvas.background?.img?.texture?.width} x ${canvas.background?.img?.texture?.height}`,
 }
