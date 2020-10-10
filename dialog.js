@@ -1,4 +1,4 @@
-/*
+/**
  * Very simple dialog to display info
  */
 let d = new Dialog({
@@ -12,7 +12,20 @@ let d = new Dialog({
   }
 }).render(true);
 
-/*
+/* ---------------------------------------------------- */
+
+/**
+ * Very simple dialog to request a user input
+ * Requires 0.7x
+ */
+let myValue = await Dialog.prompt({
+  content: `<input type="text">`,
+  callback: (html) => html.find('input').val() 
+})
+
+/* ---------------------------------------------------- */
+
+/**
  * Example dialog that requests user input, then uses the value
  */
 let d = new Dialog({
@@ -43,12 +56,11 @@ let d = new Dialog({
   close: () => {
     console.log('Example Dialog Closed');
   }
-});
-d.options.width = 300;
-d.position.width = 300;
-d.render(true);
+}).render(true);
 
-/*
+/* ---------------------------------------------------- */
+
+/**
  * Dialog that re-renders (stays open) when button is clicked
  * rather than closing
  */
