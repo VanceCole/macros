@@ -15,6 +15,17 @@ let d = new Dialog({
 /* ---------------------------------------------------- */
 
 /**
+ * Very simple dialog to prompt confirmation
+ * after user clicks button, confirmation will be boolean for yes/no
+ */
+let confirmation = await Dialog.confirm({
+  title: 'Example Confirm',
+  content: `<p>Are you sure?</p>`,
+});
+
+/* ---------------------------------------------------- */
+
+/**
  * Very simple dialog to request a user input
  * Requires 0.7x
  */
