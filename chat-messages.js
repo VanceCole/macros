@@ -5,10 +5,10 @@ ChatMessage.create({ content: 'Hello World!' });
 ChatMessage.create({ content: "Blah blah blah", speaker: { alias: "Steve" } });
 
 // Send chat message emote as a given actor
-let actor = game.actors.getName('Ancient Red Dragon');
-let speaker = ChatMessage.getSpeaker({ actor });
+let actr = game.actors.getName('Ancient Red Dragon');
+let spkr = ChatMessage.getSpeaker({ actr });
 ChatMessage.create({
-  speaker,
+  speaker: spkr,
   content: "...turns his head toward Steve",
   type: CHAT_MESSAGE_TYPES.EMOTE
 },
