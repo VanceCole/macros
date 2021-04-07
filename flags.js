@@ -7,6 +7,9 @@ let x = canvas.scene.getFlag('myModule', 'myFlag');
 // Unset a module flag on a scene
 await canvas.scene.unsetFlag('myModule', 'myFlag');
 
+// Special syntax to unset a nested property
+await canvas.scene.setFlag('myModule', 'myFlag.some.nested.-=property', null);
+
 // React to changes to flag
 Hooks.on('updateScene', (scene, data) => {
   if (hasProperty(data, 'flags.myModule')) {
