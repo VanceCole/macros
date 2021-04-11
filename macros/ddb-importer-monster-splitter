@@ -1,0 +1,23 @@
+/* Splits DDB Importer monster compendium into smaller chunks */
+
+const source = game.packs.get('world.ddb-dnd-monsters');
+const dests = ['AB','CDE','FGH','IJKL','MNO','PQR','ST','UVW','XYZ'];
+const compendiums = {};
+
+dests.forEach(async i => {
+  const label = `${i.charAt(0)}-${i.charAt(i.length - 1)}`;
+  compendiums[i] = await Compendium.create({
+    label: `DDB Monsters ${label}`,
+    entity: 'Actor',
+  })
+})
+
+console.log('Starting DDB Monster Split');
+let c = await source.getContent();
+for (entry of c) {
+  const fc = entry.name.charAt(0).toUpperCase();
+  let dest = dests.find(d => d.split('').includes(fc.toUpperCase()));
+  if (dest == null) dest = dests[0];
+  await compendiums[dest].createEntity(entry.data)
+}
+console.log('Finished DDB Monster Split');
