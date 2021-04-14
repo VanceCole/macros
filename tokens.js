@@ -22,8 +22,10 @@ canvas.tokens.selectObjects(tks[r]);
  * Add token to scene
  * Options override (actor.data.token) or set properties
  */
-let options = { x: 0, y: 0 };
-canvas.tokens.dropActor(actor, options);
+let tk = game.actors.getName('MyActor').data.token;
+tk.x = 100;
+tk.y = 100;
+Token.create(tk);
 
 /*
  * Add multiple tokens to scene
