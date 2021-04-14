@@ -30,11 +30,13 @@ Token.create(tk);
 /*
  * Add multiple tokens to scene
  */
-let actor1 = game.actors.getName('Steve');
-let token1 = duplicate(actor1.data.token);
-let actor2 = game.actors.getName('Stella');
-let token2 = duplicate(actor2.data.token);
-canvas.tokens.createMany([ token1, token2 ]);
+let tk = game.actors.getName('ActorOne').data.token;
+let tk2 = game.actors.getName('ActorTwo').data.token;
+tk.x = 100;
+tk.y = 100;
+tk2.x = 200;
+tk2.y = 200;
+Token.create([tk, tk2]);
 
 // Select all tokens in scene
 let tokens = canvas.tokens.placeables;
