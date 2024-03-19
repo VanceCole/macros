@@ -6,13 +6,11 @@ ChatMessage.create({ content: "Blah blah blah", speaker: { alias: "Steve" } });
 
 // Send chat message emote as a given actor
 let actr = game.actors.getName('Ancient Red Dragon');
-let spkr = ChatMessage.getSpeaker({ actr });
 ChatMessage.create({
-  speaker: spkr,
+  speaker: {actor: actr},
   content: "...turns his head toward Steve",
   type: CHAT_MESSAGE_TYPES.EMOTE
-},
-{ chatBubble: true });
+});
 
 // Whisper to player by id
 ChatMessage.create({
